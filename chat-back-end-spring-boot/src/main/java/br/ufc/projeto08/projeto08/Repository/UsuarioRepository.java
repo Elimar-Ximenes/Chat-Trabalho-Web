@@ -10,9 +10,9 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Integer> {
 
     @Query("SELECT u FROM Usuario u WHERE u.email <> :email")
     Iterable<Usuario> findByEmailNotEquals(@Param("email") String email);
-
-    @Query("SELECT u FROM Usuario u WHERE u.email = :email AND u.senha = :senha")
-    Usuario findByEmailAndSenha(@Param("email") String email, @Param("senha") String senha);
+    
+    @Query("SELECT u FROM Usuario u WHERE u.email = :email")
+    Usuario findByUser(@Param("email") String email);
 
     @Query("SELECT COUNT(u) > 0 FROM Usuario u WHERE u.email = :email")
     boolean existsByEmail(String email);
