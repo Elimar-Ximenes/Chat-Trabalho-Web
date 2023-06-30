@@ -1,2 +1,31 @@
+<div class="user-profile">
+    <div class="user-avatar">
+      <img [src]="userFoto" alt="Foto do usuário" class="avatar">
+    </div>
+    <div class="user-info">
+      <h3>{{ userNome }}</h3>
+      <p>{{ userEmail }}</p>
+    </div>
+  </div>
+  
+  <br><br><br><br>
+
 <h1>Chat com {{ username }}</h1>
+<br>
+<div class="chat-container">
+    <div class="message-list">
+      <div *ngFor="let message of messages" class="message">
+        <div class="message-info">
+          <div class="message-sender">{{ message.emissor.nome }}</div>
+          <div class="message-time">{{ message.horario }}</div>
+        </div>
+        <div class="message-text">{{ message.mensagem }}</div>
+      </div>
+    </div>
+  
+    <div class="message-input">
+      <textarea [(ngModel)]="newMessage" placeholder="Digite sua mensagem"></textarea>
+      <button (click)="sendMessage()">Enviar</button>
+    </div>
+  </div>
 

@@ -59,6 +59,9 @@
 
 /*Icone User*/
   .user-profile {
+    background-color: #eae9e9;
+    padding: 3px;
+    border-radius: 5px;
     position: fixed;
     top: 10px;
     left: 10px;

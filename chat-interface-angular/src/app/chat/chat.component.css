@@ -1,0 +1,103 @@
+/*Icone User*/
+.user-profile {
+    background-color: #eae9e9;
+    padding: 3px;
+    border-radius: 5px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+  }
+  
+  .avatar {
+    width: 100%;
+    height: auto;
+  }
+  
+  .user-info {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #171717;
+  }
+  
+  .user-info h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .user-info p {
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  /*Conteiner Mensagens*/
+  .chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .message-list {
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+  
+  .message {
+    margin-bottom: 10px;
+  }
+  
+  .message-info {
+    display: flex;
+    justify-content: space-between;
+    color: #888;
+  }
+  
+  .message-sender {
+    font-weight: bold;
+  }
+  
+  .message-time {
+    font-size: 12px;
+  }
+  
+  .message-text {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .message-input {
+    display: flex;
+  }
+  
+  .message-input textarea {
+    flex-grow: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+  }
+  
+  .message-input button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .message-input button:hover {
+    background-color: #0056b3;
+  }
+  
