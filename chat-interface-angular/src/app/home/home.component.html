@@ -1,3 +1,19 @@
+<div class="user-profile">
+  <div class="user-avatar">
+    <img [src]="userFoto" alt="Foto do usuário" class="avatar">
+  </div>
+  <div class="user-info">
+    <h3>{{ userNome }}</h3>
+    <p>{{ userEmail }}</p>
+  </div>
+</div><br><br><br>
+
+<div class="search-bar">
+  <input type="text" placeholder="Pesquisar usuários" [(ngModel)]="searchQuery">
+  <button (click)="searchUsers()">Pesquisar</button>
+</div>
+
+
 <div class="user-list">
     <div *ngFor="let user of users" class="card">
       <div class="card-header">
