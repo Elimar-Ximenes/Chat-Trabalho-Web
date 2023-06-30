@@ -1,0 +1,12 @@
+<div class="user-list">
+    <div *ngFor="let user of users" class="card">
+      <div class="card-header">
+        <img [src]="user.foto" alt="Foto do usuário" class="user-photo">
+      </div>
+      <div class="card-body">
+        <h3>{{ user.nome }}</h3>
+        <button (click)="startChat(user)">Conversar</button>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,81 @@
+.cadastro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    height: 90vh;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  input[type="email"],
+  input[type="text"],
+  input[type="password"]{
+    width: 300px;
+    height: 25px;
+    font-size: 14px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  select, option{
+    width: 100%;
+    height: 35px;
+    font-size: 14px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .cadastro-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #634ddd;
+    color: #fff;
+    font-size: 17px;
+    text-decoration: none;
+    border-radius: 13px;
+    width: 200px;
+    border: none;
+  }
+  
+  .cadastro-button:hover {
+    background-color: #4c32de;
+  }
+
+  .signin-link {
+    font-size: 18px;
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  .signin-link a {
+    color: #222223;
+    
+  }
+  
+  .signin-link a:hover {
+    text-decoration: underline;
+  }
+  
+  
