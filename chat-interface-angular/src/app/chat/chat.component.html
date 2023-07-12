@@ -10,7 +10,14 @@
   
   <br><br><br><br>
 
-<h1>Chat com {{ username }}</h1>
+  <div class="user-destinario">
+    <div class="destinatario-info">
+      <div class="user-avatar">
+        <img [src]="destinatarioFoto" alt="Foto do destinatário" class="avatar">
+      </div>
+      <div class="destinatario-nome">{{ destinatarioNome }}</div>
+    </div>
+    </div>
 <br>
 <div class="chat-container">
     <div class="message-list">
@@ -24,8 +31,9 @@
     </div>
   
     <div class="message-input">
-      <textarea [(ngModel)]="newMessage" placeholder="Digite sua mensagem"></textarea>
+      <textarea [(ngModel)]="newMessage" placeholder="Digite sua mensagem" (keydown.enter)="sendMessage()"></textarea>
       <button (click)="sendMessage()">Enviar</button>
     </div>
+    
   </div>
 

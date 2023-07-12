@@ -22,6 +22,27 @@
     width: 100%;
     height: auto;
   }
+
+  /*Icone Destinatario*/
+
+  .destinatario-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .destinatario-nome {
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 5px;
+  }
+
+  .user-destinario{
+    height: 100%;
+    background-color: #d3d6e9;
+    padding: 6px;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
   
   .user-info {
     font-family: Arial, Helvetica, sans-serif;

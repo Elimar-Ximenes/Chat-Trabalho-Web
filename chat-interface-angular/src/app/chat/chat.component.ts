@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-chat',
@@ -9,23 +10,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ChatComponent implements OnInit {
   username: string = '';
+  destinatarioFoto: string = '';
+  destinatarioNome: string = '';
 
   constructor(private route: ActivatedRoute, private http: HttpClient) { }
-
-  /*ngOnInit() {
-    this.route.paramMap.subscribe(params => {
-      const usernameParam = params.get('nome_usuario');
-      this.username = usernameParam ? usernameParam : 'Nome de usuário não fornecido';
-      console.log('Nome do usuário:', this.username);
-    });
-  }*/
 
   userEmail = localStorage.getItem('userEmail');
   userFoto = localStorage.getItem('userFoto');
   userNome = localStorage.getItem('userNome');
 
 
-  /***********************/private CHAT_URL = 'http://localhost:8080/api/chat/mensagem';
+  private CHAT_URL = 'http://localhost:8080/api/chat/mensagem';
 
   messages: any[] = [];
   newMessage: string = '';
@@ -37,7 +32,28 @@ export class ChatComponent implements OnInit {
       //console.log('Nome do usuário:', this.username);
     });
 
-    this.loadMessages();
+    interval(1000).subscribe(() => {
+      this.loadMessages();
+    });
+    
+    this.getDestinatarioInfo(this.username);
+
+  }
+
+  getDestinatarioInfo(username: string): void {
+    const apiUrl = 'http://localhost:8080/api/usuario/verificar';
+    this.http.get<any>(`${apiUrl}?email=${username}`).subscribe(
+      response => {
+        this.destinatarioFoto = response.foto;
+        console.log(response.foto);
+        this.destinatarioNome = response.nome;
+        console.log(response.nome);
+        //alert('Usuario ou senha invalidos. Tente novamente');
+      },
+      error => {
+        console.error('Erro ao obter informações do destinatário:', error);
+      }
+    );
   }
 
   loadMessages(): void {
